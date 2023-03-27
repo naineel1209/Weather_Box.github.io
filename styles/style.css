@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:ital@0;1&family=Tilt+Neon&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(33, 33, 33);
+    ;
+    /* width: 100vw;
+    height: 100vh; */
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    overflow: auto;
+    position: relative;
+}
+
+body>h1 {
+    color: black;
+    text-shadow: 1px 0px 10px rgb(255, 255, 255), 0 1px 10px rgb(255, 255, 255);
+    margin: 1rem 0;
+    font-size: 3rem;
+
+    transition: all .6s ease;
+}
+
+body>h1:hover {
+    transition: all .6s ease;
+    transform: scale3d(1.2, 1.3, 1.3);
+}
+
+.weather_box {
+    padding: 1rem;
+    min-width: 50%;
+    border: 2px solid black;
+    border-radius: 1rem;
+
+    height: 100%;
+    margin-bottom: 2rem;
+
+    background-color: white;
+    z-index: 0;
+    transform-style: preserve-3d
+}
+
+.search,
+.weather_details {
+    transform: translateZ(20px)
+}
+
+
+.search {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* input {
+    outline-color: green !important;
+    outline-style: double;
+} */
+
+button,
+input {
+    outline-color: black !important;
+    outline-style: double;
+
+    background-color: white !important;
+    font-size: large !important;
+    margin: 1rem .5rem 0 .5rem;
+}
+
+.search>* {
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.search input[type="text"] {
+    width: 80%;
+}
+
+.search button {
+    width: 15%;
+    cursor: pointer
+}
+
+.weather_details {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.weather_details>* {
+    margin: .5rem 0;
+}
+
+.weather_details img {
+    width: 30%;
+    transform: scale(1.2);
+}
+
+.date {
+    font-size: x-large;
+    width: 100%;
+    border: .2rem solid;
+    border-radius: 10px;
+
+    padding-inline: 1rem;
+}
+
+#date {
+    transition: all 3s ease-in-out;
+}
+
+.tempreature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.min,
+.max {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: .2rem solid;
+    border-radius: 10px;
+
+    text-align: center;
+
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+#minTemp,
+#maxTemp {
+    font-size: 5rem;
+    margin: 0 1rem;
+}
+
+.table {
+    margin: 2rem auto 0 auto;
+    width: 100%;
+}
+
+.table,
+td {
+    text-align: center;
+    border: 2px solid;
+
+    border-radius: .5rem;
+}
+
+thead {
+    font-size: x-large;
+    background-color: black;
+    color: white;
+    border-radius: .5rem;
+}
+
+thead tr:last-child {
+    margin: 1rem;
+}
+
+td {
+    width: max-content;
+}
+
+.error {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: .5rem;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    font-size: xx-large;
+}
+
+/* body :not(.error) {
+    filter: blur(2px);
+} */
+
+footer {
+    display: flex;
+    background-color: rgb(33, 33, 33);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
+    color: white;
+
+    transform-style: preserve-3d
+}
+
+footer svg {
+    transform: translateZ(20px);
+    margin: 0 .3rem;
+}
+
+@media all and (max-width: 650px) {
+    html {
+        font-size: 10px;
+    }
+
+
+    .min,
+    .max,
+    .highlights {
+        font-size: large;
+    }
+
+    .weather_box {
+        min-width: 90%;
+    }
+
+    .weather_details img {
+        width: 15%;
+    }
+
+    .tempreature {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        margin-block: 2rem;
+    }
+
+
+    table {
+        font-size: large;
+        width: 100%;
+    }
+
+    th {
+        font-size: large;
+    }
+
+    td {
+        width: max-content;
+    }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h1>Weather Box</h1>
+    <div class="weather_box">
+        <div class="search">
+            <input type="text" name="city" id="city" placeholder="Enter Your City or Use my current Location">
+            <button type="button" id="search" name="city"><i class="ri-search-line"></i></button>
+        </div>
+        <div class="weather_details">
+            <img src="resources/storm.png" alt="" srcset="">
+
+            <div class="weather_text" style="text-align: center;">
+                <div class="date">
+                    Date : <strong id="date"></strong>
+                </div>
+                <div class="tempreature">
+                    <div class="min">
+                        Minimum:
+                        <span id="minTemp">
+                            20
+                        </span>
+                        <nobr>°</nobr>
+                        <span id="minNotation">
+                            C
+                        </span>
+                    </div>
+                    <div class="max">
+                        Maximum:
+                        <span id="maxTemp">
+                            27
+                        </span>
+                        <nobr>°</nobr>
+                        <span id="maxNotation">
+                            C
+                        </span>
+                    </div>
+                </div>
+                <div class="highlights" style="text-align: center;">
+                    <div class="day">
+                        Day - <strong id="dayText">Partly Sunny</strong>
+                    </div>
+                    <div class="night">
+                        Night - <strong id="nightText">Clear Sky</strong>
+                    </div>
+                </div>
+                <div class="four_blocks">
+                    <table class="table">
+                        <THEAD>
+                            <tr>
+                                <th colspan="4">
+                                    NEXT 4 DAYS WEATHER FORECAST
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>DATE</th>
+                                <th>HIGHLIGHTS</th>
+                                <th>MIN</th>
+                                <th>MAX</th>
+                            </tr>
+                        </THEAD>
+                        <TBODY id="tbody">
+
+                        </TBODY>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Made with <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0H24V24H0z" />
+            <path
+                d="M20.243 4.757c2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236C5.515 3 8.093 2.56 10.261 3.44L6.343 7.358l1.414 1.415L12 4.53l-.013-.014.014.013c2.349-2.109 5.979-2.039 8.242.228z"
+                fill="rgba(255,0,0,1)" />
+        </svg>
+        By Naineel
+    </footer>
+
+    <div class="error">
+        GG
+    </div>
+
+    <!-- AXIOS and Local JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+
+    <!--Vanilla tilt.js Library Refer- https://micku7zu.github.io/vanilla-tilt.js/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".weather_box"), {
+            max: 2,
+            speed: 800,
+            scale: 1.01,
+            glare: true,
+            "max-glare": .2,
+        });
+    </script>
+    <!-- <script>
+        VanillaTilt.init(document.querySelectorAll(".footer"), {
+            max: 2,
+            speed: 800,
+            scale: 1.01,
+            glare: true,
+            "max-glare": .2,
+        });
+    </script> -->
+</body>
+
+</html>
