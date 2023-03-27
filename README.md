@@ -1,4 +1,4 @@
-# Weather_Box.github.io
+# Weather_Box
 Weather Box is a weather reading app powered by AccuWeather Location API and Weather API. It provides searching functionality.
 The searching functionality searches for the city and shows the various information about the city.
 
